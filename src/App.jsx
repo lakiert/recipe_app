@@ -28,8 +28,6 @@ function App() {
   }
 
   function showRandomPage(amount) {
-    setRecipes([]);
-
     for (let i = 0; i < amount; i++) {
       fetchRecipes(randomUrl);
     }
@@ -42,7 +40,8 @@ function App() {
 
   useEffect(() => {
     if (query.length === 0) {
-      showRandomPage(10);
+      setRecipes([]);
+      showRandomPage(20);
     } else {
       setRecipes([]);
       searchRecipes();
@@ -71,18 +70,24 @@ function App() {
 
       <div className="results-container">
         {isLoading ? (
-          <p>Loading...</p>
+          <div className="message">
+            <p>Loading...</p>
+          </div>
         ) : uniqueRecipes.length > 0 ? (
-          uniqueRecipes.map((recipe) => (
-            <Card
-              key={recipe.idMeal}
-              foodName={recipe.strMeal}
-              category={recipe.strCategory}
-              imgSource={recipe.strMealThumb}
-            ></Card>
-          ))
+          <div className="card-container">
+            {uniqueRecipes.map((recipe) => (
+              <Card
+                key={recipe.idMeal}
+                foodName={recipe.strMeal}
+                category={recipe.strCategory}
+                imgSource={recipe.strMealThumb}
+              ></Card>
+            ))}
+          </div>
         ) : (
-          <p>No recipes found.</p>
+          <div className="message">
+            <p>No recipes found.</p>
+          </div>
         )}
       </div>
     </>

@@ -1,0 +1,17 @@
+:root {
+  --global-spacing-xs: 0.5rem;
+  --global-spacing-sm: 1rem;
+  --global-spacing-md: 1.5rem;
+  --global-spacing-lg: 2rem;
+  --global-spacing-xl: 3rem;
+  --global-spacing-xxl: 4rem;
+
+  --global-font-size-xs: 0.75rem;
+  --global-font-size-sm: 0.875rem;
+  --global-font-size-md: 1rem;
+  --global-font-size-lg: 1.25rem;
+  --global-font-size-xl: 1.5rem;
+  --global-font-size-xxl: 2rem;
+  --global-font-size-xxxl: 3rem;
+
+}

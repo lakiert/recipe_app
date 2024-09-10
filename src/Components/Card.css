@@ -1,0 +1,56 @@
+@import url('../variables.css');
+
+.card {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: var(--global-spacing-md);
+  }
+  
+  .card img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .card-div-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .card-div-description {
+    width: 80%;
+    margin-top: var(--global-spacing-xs);
+  }
+  
+  .card h4 {
+    margin: 0;
+  }
+  
+  .card h3 {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .card img {
+      width: 100%;
+    }
+    .card-div-description {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card img {
+      width: 100%;
+    }
+    .card-div-description {
+      width: 100%;
+    }
+  }
