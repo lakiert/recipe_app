@@ -1,35 +1,64 @@
 :root {
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-xxl: 4rem;
+    --global-spacing-xs: 0.5rem;
+    --global-spacing-sm: 1rem;
+    --global-spacing-md: 1.5rem;
+    --global-spacing-lg: 2rem;
+    --global-spacing-xl: 3rem;
+    --global-spacing-xxl: 4rem;
+
+    --global-font-size-xs: 0.75rem;
+    --global-font-size-sm: 0.875rem;
+    --global-font-size-md: 1rem;
+    --global-font-size-lg: 1.25rem;
+    --global-font-size-xl: 1.5rem;
+    --global-font-size-xxl: 2rem;
+    --global-font-size-xxxl: 3rem;
 }
 
 
 html{
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
 }
 
 
 .search-field{
-    background-color: yellow;
+    background-color: green;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    
 }
 
-.resultsContainer{
+.query-input{
+    padding: var(--global-spacing-sm);
+    width: 35vw;
+    max-width: 700px;
+    border-radius: 50px;
+    border: 1px black solid;
+    font-size: var(--global-font-size-md);
+
+
+    box-sizing: border-box;
+    display: block;
+
+
+}
+
+.results-container{
     background-color: yellow;
 
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--global-spacing-lg);
 
-    padding: var(--spacing-md);
+    padding: var(--global-spacing-md);
 
 }
 
@@ -43,12 +72,10 @@ html{
 }
 
 .card h4{
-    /* margin-top: var(--spacing-sm); */
     margin: 0;
 }
 
 .card h3{
-    /* margin-top: var(--spacing-sm); */
     margin: 0;
 }
 
@@ -56,7 +83,7 @@ html{
     html {
         font-size: 85%;
     }
-    .resultsContainer {
+    .results-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
@@ -65,7 +92,7 @@ html{
     html {
         font-size: 80%;
     }
-    .resultsContainer {
+    .results-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
