@@ -1,7 +1,7 @@
 @import url("./variables.css");
 
 * {
-    border-radius: 0 !important;
+    border-radius: 0;
   }
 
 html {
@@ -32,8 +32,9 @@ body {
 
 .query-input {
   padding: var(--global-spacing-sm);
-  width: 35vw;
+  width: 40vw;
   max-width: 700px;
+  min-width: 200px;
   border-radius: 50px;
   border: 1px black solid;
   font-size: var(--global-font-size-md);
