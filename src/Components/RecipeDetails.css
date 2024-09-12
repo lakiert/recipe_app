@@ -1,0 +1,29 @@
+@import url('../variables.css');
+
+body{
+    display: block;
+}
+
+.rd-header{
+background-color: red;
+}
+
+.rd-results{
+background-color: blue;
+}
+
+.rd-the-meal{
+    background-color: greenyellow;
+}
+
+.rd-the-descriptions{
+    background-color: purple;
+}
+
+.rd-ingredients{
+    background-color: orange;
+}
+
+.rd-instructions{
+    background-color: pink;
+}
