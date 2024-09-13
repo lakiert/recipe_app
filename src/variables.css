@@ -15,3 +15,12 @@
   --global-font-size-xxxl: 3rem;
 
 }
+
+
+
+.message {
+  text-align: center;
+  font-size: var(--global-font-size-lg);
+  margin: 0px;
+  padding: 3rem;
+}

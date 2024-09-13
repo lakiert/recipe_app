@@ -1,11 +1,15 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./Components/Card";
+import Logo from "./Components/Logo";
+import RecipeDetails from "./Components/RecipeDetails"
+import Navbar from "./Components/Navbar";
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
-function App() {
+export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
@@ -54,44 +58,60 @@ function App() {
   );
 
   return (
-    <>
-      <div className="search-field">
-        <div>
-          <input
-            type="text"
-            placeholder="Search for recipes..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="query-input"
-          />
-        </div>
-        <h2>Find your next delicious meal.</h2>
-      </div>
+    <Router>
+      <Routes>
 
-      <div className="results-container">
-        {isLoading ? (
-          <div className="message">
-            <p>Loading...</p>
-          </div>
-        ) : uniqueRecipes.length > 0 ? (
-          <div className="card-container">
-            {uniqueRecipes.map((recipe) => (
-              <Card
-                key={recipe.idMeal}
-                foodName={recipe.strMeal}
-                category={recipe.strCategory}
-                imgSource={recipe.strMealThumb}
-              ></Card>
-            ))}
-          </div>
-        ) : (
-          <div className="message">
-            <p>No recipes found.</p>
-          </div>
-        )}
-      </div>
-    </>
+        {/* Main page */}
+        <Route
+          path="/"
+          element={
+            <>
+            <nav><Navbar></Navbar></nav>
+              <div className="search-field">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Search for recipes..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className="query-input"
+                  />
+                </div>
+                <h2>Find your next delicious meal.</h2>
+              </div>
+
+              <div className="results-container">
+                {isLoading ? (
+                  <div className="message">
+                    <p>Loading...</p>
+                  </div>
+                ) : uniqueRecipes.length > 0 ? (
+                  <div className="card-container">
+                    {uniqueRecipes.map((recipe) => (
+                      <Card
+                        key={recipe.idMeal}
+                        foodName={recipe.strMeal}
+                        category={recipe.strCategory}
+                        imgSource={recipe.strMealThumb}
+                        idMeal={recipe.idMeal}
+                      ></Card>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="message">
+                    <p>No recipes found.</p>
+                  </div>
+                )}
+              </div>
+            </>
+          }
+        ></Route>
+
+        {/* Recipe details */}
+          <Route path="/recipe/:id" element={<RecipeDetails/>}></Route>
+
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
