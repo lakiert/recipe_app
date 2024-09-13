@@ -1,29 +1,62 @@
-@import url('../variables.css');
+@import url("../variables.css");
 
-body{
-    display: block;
+.recipe-details {
+  min-height: 100vh;
 }
 
-.rd-header{
-background-color: red;
+.image-thumb {
+  width: 25rem;
 }
 
-.rd-results{
-background-color: blue;
+.rd-header {
+  background-color: red;
+  width: 100%;
 }
 
-.rd-the-meal{
+.rd-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "rd-the-meal rd-ingredients"
+      "rd-the-meal rd-instructions";
+  }
+  
+  .rd-the-meal {
     background-color: greenyellow;
-}
-
-.rd-the-descriptions{
-    background-color: purple;
-}
-
-.rd-ingredients{
+    grid-area: rd-the-meal;
+  }
+  
+  .rd-ingredients {
     background-color: orange;
-}
-
-.rd-instructions{
+    grid-area: rd-ingredients;
+  }
+  
+  .rd-instructions {
     background-color: pink;
-}
+    grid-area: rd-instructions;
+  }
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .rd-results {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "rd-the-meal rd-ingredients"
+        "rd-instructions rd-instructions";
+    }
+  }
+  
+  /* Phone */
+  @media (max-width: 480px) {
+    .rd-results {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+        "rd-the-meal"
+        "rd-ingredients"
+        "rd-instructions";
+    }
+  }
+  

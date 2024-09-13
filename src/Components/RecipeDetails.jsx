@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./RecipeDetails.css";
+import Logo from "./Logo";
+import Navbar from "./Navbar";
 
 //rd - recipe details
 
@@ -31,26 +33,47 @@ export default function RecipeDetails() {
     fetchRecipeDetails();
   }, [id]);
 
-  if (isLoading){
-    return <div>Loading...</div>
+  if (isLoading) {
+    return (
+      <div className="message">
+        <p>Loading...</p>
+      </div>
+    );
   }
 
-  if(!recipe){
-    return <div>No recipe found.</div>
+  if (!recipe) {
+    return (
+      <div className="message">
+        <p>No recipe found.</p>
+      </div>
+    );
   }
 
   return (
-    <>
-      <div className="rd-header">
-        <img src="../src/img/logo.png"></img>
-      </div>
+    <div className="recipe-details">
+      <nav>
+        <Navbar></Navbar>
+      </nav>
       <div className="rd-results">
-        <div className="rd-the-meal">the meal</div>
-        <div className="rd-the-descriptions">
-          <div className="rd-ingredients">ingredients</div>
-          <div className="rd-instructions">instructions</div>
+        <div className="rd-the-meal">
+          <img
+            src={recipe.strMealThumb}
+            alt={`image of ${recipe.strMeal}`}
+            className="image-thumb"
+          ></img>
+          <h3>{recipe.strMeal}</h3>
+          <h4>{recipe.strCategory}</h4>
+        </div>
+
+        <div className="rd-ingredients">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, vitae?
+        </div>
+        <div className="rd-instructions">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eligendi
+          impedit eos dolorum accusamus voluptatem ut iusto maiores eum
+          doloremque.
         </div>
       </div>
-    </>
+    </div>
   );
 }

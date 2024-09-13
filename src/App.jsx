@@ -2,7 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./Components/Card";
+import Logo from "./Components/Logo";
 import RecipeDetails from "./Components/RecipeDetails"
+import Navbar from "./Components/Navbar";
 
 const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
@@ -64,6 +66,7 @@ export default function App() {
           path="/"
           element={
             <>
+            <nav><Navbar></Navbar></nav>
               <div className="search-field">
                 <div>
                   <input

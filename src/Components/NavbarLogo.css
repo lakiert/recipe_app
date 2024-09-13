@@ -1,0 +1,11 @@
+.navbar{
+    background-color: purple;
+    height: 6rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 22rem;
+  }
