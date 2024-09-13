@@ -49,6 +49,7 @@ export default function RecipeDetails() {
     );
   }
 
+
   return (
     <div className="recipe-details">
       <nav>
@@ -66,12 +67,22 @@ export default function RecipeDetails() {
         </div>
 
         <div className="rd-ingredients">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, vitae?
+          <ul>
+            {Array.from({ length: 20 }).map((_, index) => {
+              const ingredient = recipe[`strIngredient${index + 1}`];
+              const measure = recipe[`strMeasure${index + 1}`];
+              return (
+                ingredient && (
+                  <li key={index}>
+                    {ingredient} - {measure}
+                  </li>
+                )
+              );
+            })}
+          </ul>
         </div>
         <div className="rd-instructions">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint eligendi
-          impedit eos dolorum accusamus voluptatem ut iusto maiores eum
-          doloremque.
+          {recipe.strInstructions}
         </div>
       </div>
     </div>

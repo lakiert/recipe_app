@@ -14,49 +14,37 @@
 }
 
 .rd-results {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "rd-the-meal rd-ingredients"
+    "rd-instructions rd-instructions";
+}
+
+.rd-the-meal {
+  background-color: greenyellow;
+  grid-area: rd-the-meal;
+}
+
+.rd-ingredients {
+  background-color: orange;
+  grid-area: rd-ingredients;
+}
+
+.rd-instructions {
+  background-color: pink;
+  grid-area: rd-instructions;
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  .rd-results {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-      "rd-the-meal rd-ingredients"
-      "rd-the-meal rd-instructions";
+      "rd-the-meal"
+      "rd-ingredients"
+      "rd-instructions";
   }
-  
-  .rd-the-meal {
-    background-color: greenyellow;
-    grid-area: rd-the-meal;
-  }
-  
-  .rd-ingredients {
-    background-color: orange;
-    grid-area: rd-ingredients;
-  }
-  
-  .rd-instructions {
-    background-color: pink;
-    grid-area: rd-instructions;
-  }
-  
-  /* Tablet */
-  @media (max-width: 768px) {
-    .rd-results {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      grid-template-areas:
-        "rd-the-meal rd-ingredients"
-        "rd-instructions rd-instructions";
-    }
-  }
-  
-  /* Phone */
-  @media (max-width: 480px) {
-    .rd-results {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-areas:
-        "rd-the-meal"
-        "rd-ingredients"
-        "rd-instructions";
-    }
-  }
-  
+}
