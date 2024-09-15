@@ -28,7 +28,7 @@ body {
 .search-field {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
 
   padding-top: 2rem;
   padding-bottom: 3rem;
@@ -42,6 +42,7 @@ body {
   border-radius: 50px;
   border: 1px black solid;
   font-size: var(--global-font-size-md);
+  margin-bottom: var(--global-spacing-sm);
 }
 
 .card-container {

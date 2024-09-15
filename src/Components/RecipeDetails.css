@@ -15,7 +15,7 @@
 
 .rd-results {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 40%;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "rd-the-meal rd-ingredients"
@@ -25,11 +25,52 @@
 .rd-the-meal {
   background-color: greenyellow;
   grid-area: rd-the-meal;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: var(--global-spacing-xxl);
+  padding-bottom: var(--global-spacing-xl);
+
+  text-align: center;
+}
+
+.rd-the-meal img {
+  width: 70%;
+  max-width: 25rem;
+  border-radius: 10px;
+  border: 1rem solid #E0FFAF;
+}
+
+.rd-the-meal h3 {
+  margin-top: var(--global-spacing-md);
+  font-size: var(--global-font-size-xl);
+}
+.rd-the-meal h4 {
+  margin-top: var(--global-spacing-sm);
+  font-size: var(--global-font-size-lg);
+  font-weight: lighter;
 }
 
 .rd-ingredients {
   background-color: orange;
   grid-area: rd-ingredients;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6em;
+
+  font-size: var(--global-font-size-lg);
+  padding-top: var(--global-spacing-xxl);
+  padding-bottom: var(--global-spacing-xl);
+}
+
+.rd-ingredients ul {
+  list-style-type: decimal;
+  margin-top: var(--global-spacing-md);
 }
 
 .rd-instructions {
@@ -37,14 +78,60 @@
   grid-area: rd-instructions;
 }
 
+
+
+@media (max-width: 768px) {
+  .rd-results {
+    grid-template-columns: 50% 50%;
+  }
+
+  .rd-the-meal img {
+    width: 60%;
+  }
+}
+
 /* Phone */
 @media (max-width: 480px) {
   .rd-results {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
       "rd-the-meal"
       "rd-ingredients"
       "rd-instructions";
   }
+
+  .rd-ingredients {
+    padding-top: var(--global-spacing-xl);
+    padding-bottom: var(--global-spacing-xl);
+  }
+}
+
+@media (max-width: 375px) {
+  .rd-the-meal img {
+    width: 15rem;
+  }
+}
+
+
+@media (min-width: 2000px) {
+  .rd-the-meal img {
+    width: 37rem;
+  }
+  .rd-results {
+    grid-template-columns: 35% 65%;
+  }
+
+  .rd-the-meal h3 {
+    font-size: var(--global-font-size-xxxl);
+  }
+  .rd-the-meal h4 {
+    font-size: var(--global-font-size-xxl);
+  }
+
+  .rd-ingredients {
+    line-height: 1.7em;
+    font-size: var(--global-font-size-xxl);
+  }
+
 }
