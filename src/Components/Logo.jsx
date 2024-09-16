@@ -6,7 +6,7 @@ export default function Logo() {
   const navigate = useNavigate();
 
   function showMainPage() {
-    window.open("/", "_blank");
+    navigate("/");
   }
 
   return (
