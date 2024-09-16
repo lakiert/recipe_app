@@ -5,7 +5,7 @@ export default function Card({ imgSource, category, foodName, idMeal }) {
   const navigate = useNavigate();
 
   function showRecipeDetails(idMeal) {
-    navigate(`/recipe/${idMeal}`, "_blank");
+    window.open(`/recipe/${idMeal}`, "_blank");
   }
 
   return (
