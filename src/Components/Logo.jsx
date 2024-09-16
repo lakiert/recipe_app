@@ -10,7 +10,7 @@ export default function Logo() {
 
   return (
     <img
-      src="../src/img/logo.png"
+      src="../img/logo.png"
       alt="Delicious logo"
       className="logo"
       onClick={() => showMainPage()}
