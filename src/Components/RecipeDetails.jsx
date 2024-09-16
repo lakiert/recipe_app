@@ -49,6 +49,8 @@ export default function RecipeDetails() {
     );
   }
 
+  const steps = recipe.strInstructions.split(/\r?\n/);
+
   return (
     <div className="recipe-details">
       <nav>
@@ -81,7 +83,13 @@ export default function RecipeDetails() {
             })}
           </ul>
         </div>
-        <div className="rd-instructions">{recipe.strInstructions}</div>
+        <div className="rd-instructions">
+        <h3>Instructions:</h3>
+        
+          {steps.map((line, index) => (
+            <p key={index}>{line.split(/\r?\n/)}<br/></p>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 .navbar{
-    background-color: purple;
     height: 6rem;
 
     display: flex;
@@ -8,4 +7,5 @@
 
 .logo {
     width: 22rem;
+    cursor: pointer;
   }
