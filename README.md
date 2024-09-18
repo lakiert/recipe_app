@@ -1,6 +1,8 @@
 # Delicious Recipe app 🍝
 
-This is my personal project where you can find recipes. https://lakiert-delicious.netlify.app
+https://lakiert-delicious.netlify.app
+
+This is my personal project where you can find recipes. Refreshing or re-entering the main page results in displaying a new set of random recipes. Type in the search box to filter the recipes by names. By selecting one of the recipes we can view the recipe details page and read the ingredients and the preparation instructions.
 
 I used https://www.themealdb.com API for fetching the data.
 
