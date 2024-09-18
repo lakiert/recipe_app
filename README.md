@@ -20,4 +20,4 @@ I designed the pages using Figma. The design is responsive and works well for de
 
 
 ### Screenshot from the recipe details page
-![screenshot from the recipe details page](https://github.com/lakiert/recipe_app/blob/main/src/img/screenshot.png)
+![screenshot from the recipe details page](https://github.com/lakiert/recipe_app/blob/main/src/img/screenshot.jpg)
