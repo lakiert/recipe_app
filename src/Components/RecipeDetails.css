@@ -34,7 +34,7 @@
   width: 70%;
   max-width: 25rem;
   border-radius: 10px;
-  border: 1rem solid #E0FFAF;
+  border: 1rem solid #e0ffaf;
 }
 
 .rd-the-meal h3 {
@@ -72,16 +72,16 @@
   padding: var(--global-spacing-xxxl);
 }
 
-.rd-instructions h3{
-margin-bottom: var(--global-spacing-md);
+.rd-instructions h3 {
+  margin-bottom: var(--global-spacing-md);
 }
 
-.rd-instructions p{
+.rd-instructions p {
   margin-bottom: var(--global-spacing-sm);
 }
 
 @media (max-width: 768px) {
-    .rd-the-meal img {
+  .rd-the-meal img {
     width: 60%;
   }
 }
@@ -109,7 +109,6 @@ margin-bottom: var(--global-spacing-md);
   }
 }
 
-
 @media (min-width: 2000px) {
   .rd-the-meal img {
     width: 37rem;
@@ -130,4 +129,7 @@ margin-bottom: var(--global-spacing-md);
     font-size: var(--global-font-size-xxl);
   }
 
+  .rd-instructions {
+    font-size: var(--global-font-size-xxl);
+  }
 }
